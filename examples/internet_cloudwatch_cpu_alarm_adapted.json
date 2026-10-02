@@ -1,0 +1,56 @@
+{
+  "_source_reference": {
+    "title": "AWS CloudWatch Alarm State Change / EventBridge example",
+    "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-and-eventbridge.html",
+    "note": "Struktur an oeffentlich dokumentierte CloudWatch Alarm Events angelehnt und fuer die Simulation angepasst."
+  },
+  "version": "0",
+  "id": "2b7a6a9c-1c2e-4f31-9c9f-1a1d2b3c4d5e",
+  "detail-type": "CloudWatch Alarm State Change",
+  "source": "aws.cloudwatch",
+  "account": "000000000000",
+  "time": "2025-12-25T20:58:40Z",
+  "region": "eu-central-1",
+  "resources": [
+    "arn:aws:cloudwatch:eu-central-1:000000000000:alarm:ServerCpuTooHigh"
+  ],
+  "detail": {
+    "alarmName": "ServerCpuTooHigh",
+    "configuration": {
+      "description": "Alarm wenn CPU-Auslastung ueber Schwellwert liegt",
+      "metrics": [
+        {
+          "id": "m1",
+          "metricStat": {
+            "metric": {
+              "namespace": "AWS/EC2",
+              "name": "CPUUtilization",
+              "dimensions": {
+                "InstanceId": "i-0abc12345def67890"
+              }
+            },
+            "period": 300,
+            "stat": "Average"
+          },
+          "returnData": true
+        }
+      ]
+    },
+    "previousState": {
+      "value": "OK",
+      "timestamp": "2025-12-25T20:53:40Z",
+      "reason": "Vorheriger Zustand OK"
+    },
+    "state": {
+      "value": "ALARM",
+      "timestamp": "2025-12-25T20:58:40Z",
+      "reason": "Threshold Crossed: CPU Average ist ueber dem Grenzwert",
+      "reasonData": {
+        "statistic": "Average",
+        "period": 300,
+        "recentDatapoints": [97.2],
+        "threshold": 90.0
+      }
+    }
+  }
+}
