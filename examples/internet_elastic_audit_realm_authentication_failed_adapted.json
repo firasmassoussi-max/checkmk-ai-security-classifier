@@ -1,0 +1,16 @@
+{
+  "source": "elastic_audit_adapted",
+  "host": "auth-gateway-01",
+  "service": "authentication",
+  "state": "CRIT",
+  "event": {
+    "type": "realm_authentication_failed",
+    "outcome": "failure",
+    "time_window_minutes": 5,
+    "failed_logins_count": 120,
+    "unique_accounts_targeted": 35,
+    "unique_sources_count": 80,
+    "success_after_failures": 3
+  },
+  "note": "Adaptiertes/synthetisches Beispiel auf Basis öffentlich beschriebener Auth-Failure-Events. Keine echten User/IPs enthalten."
+}
