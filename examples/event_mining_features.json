@@ -1,0 +1,25 @@
+{
+  "source": "checkmk",
+  "meta": {
+    "host": "app-02",
+    "service": "CPU + process anomaly",
+    "state": "CRIT",
+    "occurred_at": "2025-12-25T22:15:00+01:00",
+    "description": "Synthetisches Beispiel fuer einen malware-/cryptomining-aehnlichen Fall"
+  },
+  "window_sec": 300,
+  "samples": {
+    "cpu_util": [92, 95, 97, 93, 96, 98, 97, 95, 94, 96],
+    "iowait": [18, 22, 25, 19, 21, 24, 26, 23, 20, 22],
+    "disk_write_mb_s": [120, 160, 180, 150, 170, 210, 190, 175, 165, 185],
+    "net_out_mb_s": [4, 6, 5, 7, 8, 20, 18, 16, 14, 12],
+    "proc_spawn_count": [30, 45, 50, 42, 55, 80, 75, 70, 68, 72],
+    "failed_logins": [0, 1, 0, 0, 2, 1, 0, 0, 1, 0]
+  },
+  "hints": {
+    "unusual_outbound_connections": true,
+    "new_unknown_binary_seen": true,
+    "possible_mass_file_changes": true,
+    "known_bad_process_matches": ["xmrig"]
+  }
+}
